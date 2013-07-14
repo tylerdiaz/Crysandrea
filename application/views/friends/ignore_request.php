@@ -1,0 +1,1 @@
+New view created for <b>friends/ignore_request at September 26, 2012</b>

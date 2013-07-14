@@ -1,0 +1,1 @@
+New view created for <b>friends/remove_friend at September 26, 2012</b>

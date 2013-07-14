@@ -1,0 +1,1 @@
+New view created for <b>forest/quick_shop_purchase at November 4, 2012</b>

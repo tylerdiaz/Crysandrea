@@ -1,0 +1,1 @@
+New view created for <b>friends/accept_request at September 26, 2012</b>

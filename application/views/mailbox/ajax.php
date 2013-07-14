@@ -1,0 +1,1 @@
+New view created for <b>mailbox/ajax at October 6, 2012</b>

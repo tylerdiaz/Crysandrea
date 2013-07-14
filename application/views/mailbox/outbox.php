@@ -1,0 +1,1 @@
+New view created for <b>mailbox/outbox at October 6, 2012</b>

@@ -1,0 +1,1 @@
+New view created for <b>mailbox/saved at October 6, 2012</b>

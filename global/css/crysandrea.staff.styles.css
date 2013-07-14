@@ -1,0 +1,6 @@
+/* FORUM MULTIPLE MOVING/EDITING JAVASCRIPT */
+#group_edit{ margin-top: 10px; margin-right: 10px; }
+.checkbox_holder{ position: relative; }
+.multi_select{ position: absolute; right: -14px; top: -23px; opacity: 0.5; }
+table.clean tr:hover .multi_select, table.clean tr .multi_select_on { opacity: 1; }
+#forum_id{ display: none; }

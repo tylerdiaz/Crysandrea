@@ -1,0 +1,1 @@
+New view created for <b>friends/get_user_data at September 10, 2012</b>

@@ -1,0 +1,1 @@
+New view created for <b>friends/reformat_schema at September 9, 2012</b>
