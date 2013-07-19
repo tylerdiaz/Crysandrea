@@ -42,4 +42,4 @@
 		<div class="next_up">Signing in will redirect you to: <strong>http://crysandrea.com/<?php echo $this->input->get('r') ?></strong></div>
 	</div>
 </div>
-<div style="text-align:center; color:#38697f; font-size:12px; opacity:0.8; margin:10px;">Don't have an account? You should <a href="#">create your account</a> to get started!</div>
+<div style="text-align:center; color:#38697f; font-size:12px; opacity:0.8; margin:10px;">Don't have an account? You should <a href="/auth/signup">create your account</a> to get started!</div>
