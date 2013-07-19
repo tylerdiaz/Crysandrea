@@ -484,7 +484,7 @@ All you need to do to set up your new password is visit the link below:<br />
 				'username'          => $username,
 				'user_ip'           => $this->input->ip_address(),
 				'user_email'        => $email,
-				'user_pass'         => $this->authentication->hash_password($password),
+				'user_pass'         => $password,
 				'user_palladium'    => $this->starting_palladium,
 				'last_saved_avatar' => time()
 			);
