@@ -42,7 +42,9 @@ class Chirp
 
 	public function broadcast($room = 0, $message = '')
 	{
-    $this->redis->publish($room, $message);
+		if ($this->redis):
+			$this->redis->publish($room, $message);
+		endif;
 	}
 
 	// --------------------------------------------------------------------
