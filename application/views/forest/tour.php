@@ -2,15 +2,19 @@
 <style type="text/css">
 	#forest_tour {
 		height:380px;
-		margin:5px 0;
-		color:#ccc;
+		margin:35px;
+		text-align:center;
+		color:#d2e8b7;
+		font-size:16px;
+		line-height:26px;
+	}
+	#forest_tour h1 {
+		margin-bottom:20px;
 	}
 </style>
 <div id="forest_tour">
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	<h1>Welcome to the forest!</h1>
+	<p>The Forest is a place where you can hunt and collect bugs from the Crysandrea forest. All you need is an avatar, a net, and some energy to hunt! Bugs can be sold in exchange for Palladium, so it's also a great way to work toward an item you want. Again, welcome to the forest and happy hunting!</p>
+	<br />
+	<a href="/forest" class="main_button">Venture into the forest &rsaquo;</a>
 </div>
