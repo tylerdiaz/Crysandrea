@@ -247,9 +247,7 @@
 	<div class="grid_4">
 		<h5 style="margin:0 0 3px;">There are currently <?php echo count($users_online) ?> online users <span style="color:#8f8f8f; font-weight:normal; font-size:11px;">(<?php echo count($users_online) ?> Crysandreans, 0 Guests)</span></h5>
 		<?php foreach ($users_online as $user_key => $user): ?>
-			<!-- <a href="/user/<?php echo urlencode($user['username']) ?>" style="<?php echo user_style($user['user_level']) ?>"><?php echo $user['username'] ?></a><?php echo ($user_key != count($users_online)-1 ? ', ' : '') ?> -->
-			<a href="/user/<?php echo urlencode($user['username']) ?>" style="color:<?php echo sprintf("#%06x",rand(0,16777215)) ?>; <?php echo ($user['user_level'] != 'user' ? "font-weight:bold; text-decoration:underline" : '') ?>"><?php echo $user['username'] ?></a><?php echo ($user_key != count($users_online)-1 ? ', ' : '') ?>
-
+			<a href="/user/<?php echo urlencode($user['username']) ?>" style="<?php echo user_style($user['user_level']) ?>"><?php echo $user['username'] ?></a><?php echo ($user_key != count($users_online)-1 ? ', ' : '') ?>
 		<?php endforeach ?>
 	</div>
 	<div class="grid_2">
