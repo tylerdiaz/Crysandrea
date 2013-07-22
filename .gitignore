@@ -5,5 +5,7 @@
 */cache/!index.html
 sftp-config.json
 .DS_Store
-application/config/database.php
-application/config/config.php
+*/config/database.php
+*/config/config.php
+images/avatars/[0-9].png
+images/avatars/[0-9]_headshot.png
