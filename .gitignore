@@ -7,5 +7,7 @@ sftp-config.json
 .DS_Store
 */config/database.php
 */config/config.php
+config.php
 images/avatars/[0-9].png
 images/avatars/[0-9]_headshot.png
+application/config/config.php
