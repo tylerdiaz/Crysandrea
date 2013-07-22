@@ -114,7 +114,7 @@ button#swap_gender {
 </style>
 
 <div class="success" id="success_container" style="display:none;">
-	<h3><?=image('images/icons/yay.png')?> {compliment}</h3>
+	<h3><?php echo image('images/icons/yay.png') ?> {compliment}</h3>
 	<p>Your avatar has been saved!</p>
 </div>
 
@@ -123,7 +123,7 @@ button#swap_gender {
 	<img src="{avatar_preview_url}" id="avatar_preview_img" width="180" height="270" />
 
 	<div style="margin:5px 10px;">
-		<a href="<?=site_url('avatar/save');?>" id="save_avatar">Save changes</a>
+		<a href="<?php echo site_url('avatar/save');?>" id="save_avatar">Save changes</a>
 		<div style="text-align:center; margin-right:auto; margin-left:auto;">
 			<a href="#" id="revert">Revert</a> or <a href="#" id="unequip_all_button">Unequip all</a>
 		</div>
@@ -146,58 +146,55 @@ button#swap_gender {
 			<div id="tab_glove">
 			<? foreach($items as $tab => $item1): ?>
 				<? $i=0; foreach($item1 as $order => $item2): ?>
-					<div id="<?=strtolower($order)?>" <?php if($i==0){ $i++; echo 'style="display:;"';} ?>>
+					<div id="<?php echo strtolower($order) ?>" <?php if($i==0){ $i++; echo 'style="display:;"';} ?>>
 					<? foreach($item2 as $key_1 => $item3): ?>
-						<span class="<?=$key_1?>">
+						<span class="<?php echo $key_1?>">
 						<? foreach($item3 as $key_2 => $item): ?>
 						    <? if(isset($item['sub_items'][0])): ?>
 						    <? $sub_active = false; ?>
-						        <div class="multi_item" id="<?=$item['group_key']?>">
-						            <a href="<?=site_url('avatar/equip/'.$item['id'].'/'.(count($item['sub_items']) > 0 ? '-1' : '')); ?>" class="stack<?=($item['equipped'] == true ? ' equipped' : '');?>" layer="<?=$item['layer']?>" id="<?=$item['id']?>" parent="true" style="margin:0.5px;">
-	        						<? if($item['num'] > 1):?>
-	        						    <?=image('avatar/thumbnail/'.$item['id'], 'title="'.$item['name'].'"')?>
-	        						<? else: ?>
-	        						    <?=image('/images/items/'.$item['thumb'], 'title="'.$item['name'].'"')?>
-	        						<? endif; ?>
-	        						</a>
+						        <div class="multi_item" id="<?php echo $item['group_key']?>">
+						            <a href="<?php echo site_url('avatar/equip/'.$item['id'].'/'.(count($item['sub_items']) > 0 ? '-1' : '')); ?>" class="stack<?php echo ($item['equipped'] == true ? ' equipped' : '');?>" layer="<?php echo $item['layer']?>" id="<?php echo $item['id']?>" parent="true" style="margin:0.5px;">
+		        						<? if($item['num'] > 1):?>
+		        						    <?php echo image('avatar/thumbnail/'.$item['id'], 'title="'.$item['name'].'"') ?>
+		        						<? else: ?>
+		        						    <?php echo image('/images/items/'.$item['thumb'], 'title="'.$item['name'].'"') ?>
+		        						<? endif; ?>
+		        						</a>
 	        						<ul>
 	        						<? foreach($item['sub_items'] as $sub_item): ?>
 	        						<? ($sub_item['equipped'] == true ? $sub_active = true : ''); ?>
 	        						  <li>
-	        						      <a href="<?=site_url('avatar/equip/'.$item['id'].'-'.$sub_item['sub_item_key']);?>" class="stack <?=($sub_item['equipped'] == true ? 'equipped' : '');?>" layer="<?=$sub_item['layer']?>" id="<?=$item['id']?>" sub_item="true" style="margin:0.5px;" width="42" height="42">
-	              							<?=image('images/items/'.$sub_item['thumb'], 'title="'.$sub_item['name'].'"')?>
+	        						      <a href="<?php echo site_url('avatar/equip/'.$item['id'].'-'.$sub_item['sub_item_key']);?>" class="stack <?php echo ($sub_item['equipped'] == true ? 'equipped' : '');?>" layer="<?php echo $sub_item['layer']?>" id="<?php echo $item['id']?>" sub_item="true" style="margin:0.5px;" width="42" height="42">
+	              							<?php echo image('images/items/'.$sub_item['thumb'], 'title="'.$sub_item['name'].'"') ?>
 	              						</a>
 	        						  </li>
 	        						<? endforeach; ?>
 	        						</ul>
-	        						<a href="#" class="pull_down <?=($sub_active == true ? 'glowing' : '');?>" style="margin:1px; margin-right:-2px;"></a>
+	        						<a href="#" class="pull_down <?php echo ($sub_active == true ? 'glowing' : '');?>" style="margin:1px; margin-right:-2px;"></a>
 						        </div>
 						    <? else: ?>
-						        <a href="<?=site_url('avatar/equip/'.$item['id'].'/');?>" class="stack<?=($item['equipped'] == true ? ' equipped' : '');?>" layer="<?=$item['layer']?>"  id="<?=$item['id']?>" style="margin:0.5px;">
+						        <a href="<?php echo site_url('avatar/equip/'.$item['id'].'/');?>" class="stack<?php echo ($item['equipped'] == true ? ' equipped' : '');?>" layer="<?php echo $item['layer']?>"  id="<?php echo $item['id']?>" style="margin:0.5px;">
 	    						<? if($item['num'] > 1):?>
-	    						    <?=image('avatar/thumbnail/'.$item['id'].'/'.$item['num'], 'title="'.$item['name'].'" width="42" height="42"')?>
+	    						    <?php echo image('avatar/thumbnail/'.$item['id'].'/'.$item['num'], 'title="'.$item['name'].'" width="42" height="42"') ?>
 	    						<? else: ?>
-	    						    <?=image('/images/items/'.$item['thumb'], 'title="'.$item['name'].'" width="42" height="42"')?>
+	    						    <?php echo image('/images/items/'.$item['thumb'], 'title="'.$item['name'].'" width="42" height="42"') ?>
 	    						<? endif; ?>
 	    						</a>
-						    <? endif;
-						endforeach;
-						echo '</span>';
-					endforeach;
-					echo "</div>";
-				endforeach;
-			endforeach;
-		else:
-			echo "<strong>You have no items in your inventory.</strong>";
-		endif;
-		?>
-		</div>
-
+						    <? endif; ?>
+						<? endforeach; ?>
+						</span>
+					<? endforeach; ?>
+					</div>
+				<? endforeach; ?>
+			<? endforeach; ?>
+			</div>
+		<? else: ?>
+			<strong>You have no items in your inventory.</strong>
+		<? endif; ?>
 		<br class="clear" />
-
 	</div>
 </div>
+
 <br clear="all" />
-<div id="test"></div>
 
 <br />
