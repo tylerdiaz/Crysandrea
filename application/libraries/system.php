@@ -28,7 +28,11 @@ class System
 	{
 		$this->CI =& get_instance();
 
-		$this->CI->load->driver('cache', array('adapter' => 'apc'));
+		if (function_exists('apc_fetch')):
+			$this->CI->load->driver('cache', array('adapter' => 'apc'));
+		else:
+			$this->CI->load->driver('cache');
+		endif;
 
 		if ($this->CI->session->userdata('user_id')):
 			$this->userdata = $this->CI->db->get_where('users', array('users.user_id' => $this->CI->session->userdata('user_id')))->row_array();
