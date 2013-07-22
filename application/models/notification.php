@@ -101,6 +101,7 @@ class Notification extends CI_Model
 
 		$notification_data = array_merge($new_notification_data, $notification_data);
 
+		$return_value = FALSE;
 		if($friendlist_broadcast):
 			$friend_notifications = array();
 			$friends = $this->system->get_friends();
