@@ -5,3 +5,5 @@
 */cache/!index.html
 sftp-config.json
 .DS_Store
+application/config/database.php
+application/config/config.php
