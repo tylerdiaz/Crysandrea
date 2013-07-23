@@ -16,10 +16,10 @@
     		<?php endif ?>
     		<?php if ($this->system->is_staff()): ?>
     		|
-    			<form action="/forum/delete_post/" style="display:inline;" method="POST">
+    			<form action="/forum/delete_post" style="display:inline; margin:0; padding:0" method="POST">
     				<input type="hidden" name="url" value="<?php echo $_SERVER['REQUEST_URI'] ?>" />
     				<input type="hidden" name="post_id" value="<?php echo $post['post_id'] ?>" />
-    				<button type="submit" class="btn btn-link" style="color:#777; padding:0; margin:0; display:inline; font-size:12px;">Delete</button>
+    				<button type="submit" class="btn btn-link" style="color:#777; padding:0; margin:-2px 0 0; display:inline; font-size:12px;">Delete</button>
     			</form>
     		<?php endif ?>
     		<?php echo user_online($post['last_action']) ?>

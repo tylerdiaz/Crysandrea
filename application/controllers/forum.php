@@ -268,13 +268,17 @@ class Forum extends CI_Controller
 
 		$this->load->library('pagination');
 		$this->pagination->initialize(array(
-			'base_url' => '/topic/view/'.$topic_id,
-			'total_rows' => $total_posts,
-			'per_page' => $this->posts_per_page,
+			'base_url'    => '/topic/view/'.$topic_id,
+			'total_rows'  => $total_posts,
+			'per_page'    => $this->posts_per_page,
 			'uri_segment' => 4
 		));
 
 		$this->posts = $this->forum_engine->get_topic_posts($topic_data, $this->uri->segment(4, 0), $this->posts_per_page);
+
+		if ( ! $this->posts):
+			show_error('This topic has no posts to load');
+		endif;
 
 		if($this->session->userdata('user_id')):
 			$subscribed = $this->db->limit(1)->select('subscribed_topics')->where('user_id', $this->session->userdata('user_id'))->get('subscribed_topics');
@@ -979,15 +983,43 @@ class Forum extends CI_Controller
 
 	 public function delete_post()
 	 {
-	     if ( ! $this->system->is_staff()) show_404();
+			if ( ! $this->system->is_staff()) show_404();
 
-	     $post_id = $this->input->post('post_id');
+			$post_id = $this->input->post('post_id');
 
-	     if( ! is_numeric($post_id)) show_error('post_id must be valid');
+			if( ! is_numeric($post_id)) show_error('post_id must be valid');
 
-	     $this->db->where('post_id', $post_id)->delete('topic_posts');
+			$post_data = $this->db->get_where('topic_posts', array('post_id' => $post_id))->row();
+			$topic_id = $post_data->topic_id;
 
-		 redirect($this->input->post('url'));
+			if(is_numeric($topic_id)):
+		    $topic_data = $this->forum_engine->get_topic_data($topic_id);
+			else:
+		    show_error('The topic id must be a valid number!');
+			endif;
+
+			$this->load->helper('forum');
+
+			if ( ! $total_posts = $this->cache->get('topic_total_posts'.$topic_id)):
+				$total_posts = $topic_data['total_posts'];
+				$this->cache->save('topic_total_posts'.$topic_id, $total_posts, 2400);
+			endif;
+
+			if ($post_data->topic_post_id == 1 || $total_posts == 1):
+				// This means to delete the topic all-together
+				$this->db->where('topic_id', $topic_id)->delete('topics');
+				$this->db->where('post_id', $post_id)->delete('topic_posts');
+				$this->db->where('post_id', $post_id)->delete('topic_post_text');
+				$this->cache->delete('topic_total_posts'.$topic_id);
+
+				redirect('forum');
+			else:
+				$this->db->where('post_id', $post_id)->delete('topic_posts');
+				$this->db->where('post_id', $post_id)->delete('topic_post_text');
+				$this->cache->delete('topic_total_posts'.$topic_id);
+
+				redirect($this->input->post('url'));
+			endif;
 	 }
 
 

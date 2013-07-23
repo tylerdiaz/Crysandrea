@@ -596,6 +596,8 @@ class Forum_engine extends CI_Model
                                     ->get('topic_posts')
                                     ->result_array();
 
+        if(count($topic_posts_id) < 1) return FALSE;
+
         $posts_id = array();
         foreach($topic_posts_id as $post):
             $posts_id[$post['topic_post_id']] = $post['post_id'];
