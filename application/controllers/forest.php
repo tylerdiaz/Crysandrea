@@ -4,7 +4,7 @@ class Forest extends CI_Controller
 {
   var $recover_interval = 300; // 5 minutes
   var $user_table = 'forest_users';
-  var $snap_free = TRUE;
+  var $snap_free = FALSE;
   var $route_navigation = array(
     'index'        => 'Forest',
     'museum'       => 'Your museum',
