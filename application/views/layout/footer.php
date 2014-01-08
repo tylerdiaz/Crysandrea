@@ -1,7 +1,7 @@
 				</div>
 				<div id="footer">
 					<a href="#logo" class="logo" title="&#9786; Back to top">Crysandrea</a>
-					<span title="Create a support ticket" class="right" id="helpme"><a href="http://crysandrea.com/ticket" class="help">Staff support</a> </span>
+					<span title="Create a support ticket" class="right" id="helpme"><a href="/ticket" class="help">Staff support</a> </span>
 					<div class="first">
 						<a href="/?ref=footer">Home</a> &bull;
 						<a href="/forum?ref=footer">Forum</a> &bull;
