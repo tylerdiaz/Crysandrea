@@ -46,14 +46,5 @@
 	<script src="/global/js/chirp.js?123"></script>
 <?php endif ?>
 
-	<?php if (FALSE): ?>
-		<div style="position:absolute; top:20%; left:30%; z-index:9999">
-			<form action="/snowball/collect_item" method="POST">
-				<input type="hidden" name="url" value="/<?php echo $this->uri->uri_string() ?>" />
-				<input type="image" src="/images/event/snow.png" />
-			</form>
-		</div>
-	<?php endif ?>
-
 	</body>
 </html>
