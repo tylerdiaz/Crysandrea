@@ -211,9 +211,10 @@ function parse_earned_palladium($message)
 function parse_bbcode($text = '')
 {
 	$text = str_replace('crysandrea.com/signout', 'crysandrea.com/signout/__REMOVE__', $text);
-
 	$url_regex = " a-zA-Z0-9\:\/\-\?\&\.\=\_\~\#\'+";
-
+//You can create smileys using something along these lines. Just as an example here is a smiley which replaces 		:goodnight: with an image from a different website. You can also do something local of course :). 
+//$text = preg_replace("(\:goodnight\:)is",'<img src="http://www.smileyvault.com/albums/forum/smileyvault-goodnight.gif" border="0" alt="Good Night Smiley" title="Good Night Smiley" /></a>',$text);
+	$text = str_replace('onload="','',$text);
 	$text = preg_replace("/\[url\]([$url_regex]*)\[\/url\]/", '<a href="$1" target="_blank">$1</a>', $text);
 	$text = preg_replace("(\[url\=([$url_regex]*)\](.+?)\[/url\])", '<a href="$1" target="_blank">$2</a>', $text);
 	$text = preg_replace("(\[!\](.+?)\[\/!])is",'<span class="highlight">$1</span>',$text);
