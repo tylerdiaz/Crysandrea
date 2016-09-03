@@ -9,7 +9,7 @@
 		<?php else: ?>
 			<?php if(validation_errors()): ?>
 				<?php $this->load->view('partials/notices/error.php', array('data' => validation_errors())) ?>
-			<? endif; ?>
+			<?php endif; ?>
 
 			<form class="form-horizontal" method="POST" action="/auth/forgot_password" style="margin:15px 15px 0 30px;">
 				<div class="next_up" style="margin:0px 0 15px;"><span class="label label-info">Tip</span> Submit your email and we'll send step-by-step instructions on how reset your account's password.</div>

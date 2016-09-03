@@ -202,43 +202,43 @@ button#swap_gender {
 			<?php endforeach ?>
 		</ul>
 		<div id="tab_glove">
-		<? foreach($items as $tab => $item1): ?>
-			<? $i=0; foreach($item1 as $order => $item2): ?>
+		<?php foreach($items as $tab => $item1): ?>
+			<?php $i=0; foreach($item1 as $order => $item2): ?>
 				<div id="<?=strtolower($order)?>" <?php if($i==0){ $i++; echo 'style="display:none;"';} ?>>
-				<? foreach($item2 as $key_1 => $item3): ?>
+				<?php foreach($item2 as $key_1 => $item3): ?>
 					<span class="<?=$key_1?>">
-					<? foreach($item3 as $key_2 => $item): ?>
-					    <? if(isset($item['sub_items'][0])): ?>
-					    <? $sub_active = false; ?>
+					<?php foreach($item3 as $key_2 => $item): ?>
+					    <?php if(isset($item['sub_items'][0])): ?>
+					    <?php $sub_active = false; ?>
 					        <div class="multi_item" id="<?=$item['group_key']?>">
 					            <a href="<?=site_url('avatar/equip/'.$item['id'].'/'.(count($item['sub_items']) > 0 ? '-1' : '')); ?>" class="stack<?=($item['equipped'] == true ? ' equipped' : '');?>" layer="<?=$item['layer']?>" id="<?=$item['id']?>" parent="true" style="margin:0.5px;">
-        						<? if($item['num'] > 1):?>
+        						<?php if($item['num'] > 1):?>
         						    <?=image('avatar/thumbnail/'.$item['id'], 'title="'.$item['name'].'"')?>
-        						<? else: ?>
+        						<?php else: ?>
         						    <?=image('/images/items/'.$item['thumb'], 'title="'.$item['name'].'"')?>
-        						<? endif; ?>
+        						<?php endif; ?>
         						</a>
         						<ul>
-        						<? foreach($item['sub_items'] as $sub_item): ?>
-        						<? ($sub_item['equipped'] == true ? $sub_active = true : ''); ?>
+        						<?php foreach($item['sub_items'] as $sub_item): ?>
+        						<?php ($sub_item['equipped'] == true ? $sub_active = true : ''); ?>
         						  <li>
         						      <a href="<?=site_url('avatar/equip/'.$item['id'].'-'.$sub_item['sub_item_key']);?>" class="stack <?=($sub_item['equipped'] == true ? 'equipped' : '');?>" layer="<?=$sub_item['layer']?>" id="<?=$item['id']?>" sub_item="true" style="margin:0.5px;" width="42" height="42">
               							<?=image('images/items/'.$sub_item['thumb'], 'title="'.$sub_item['name'].'"')?>
               						</a>
         						  </li>
-        						<? endforeach; ?>
+        						<?php endforeach; ?>
         						</ul>
         						<a href="#" class="pull_down <?=($sub_active == true ? 'glowing' : '');?>" style="margin:1px; margin-right:-2px;"></a>
 					        </div>
-					    <? else: ?>
+					    <?php else: ?>
 					        <a href="<?=site_url('avatar/equip/'.$item['id'].'/');?>" class="stack<?=($item['equipped'] == true ? ' equipped' : '');?>" layer="<?=$item['layer']?>"  id="<?=$item['id']?>" style="margin:0.5px;">
-    						<? if($item['num'] > 1):?>
+    						<?php if($item['num'] > 1):?>
     						    <?=image('avatar/thumbnail/'.$item['id'].'/'.$item['num'], 'title="'.$item['name'].'" width="42" height="42"')?>
-    						<? else: ?>
+    						<?php else: ?>
     						    <?=image('/images/items/'.$item['thumb'], 'title="'.$item['name'].'" width="42" height="42"')?>
-    						<? endif; ?>
+    						<?php endif; ?>
     						</a>
-					    <? endif;
+					    <?php endif;
 					endforeach;
 					echo '</span>';
 				endforeach;

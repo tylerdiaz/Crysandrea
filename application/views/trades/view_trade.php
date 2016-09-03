@@ -113,9 +113,9 @@
 					<?php foreach ($trade['sender']->items as $item): ?>
 
 						<?php if ($item['item_type'] == 'item' && $item['amount'] > 1): ?>
-							<? for ($i=0; $i < $item['amount']; $i++): ?>
+							<?php for ($i=0; $i < $item['amount']; $i++): ?>
 								<?php echo $item['element'] ?>
-							<? endfor; ?>
+							<?php endfor; ?>
 						<?php else: ?>
 							<?php echo $item['element'] ?>
 						<?php endif ?>
@@ -181,9 +181,9 @@
 				<?php if (count($trade['receiver']->items) > 0): ?>
 					<?php foreach ($trade['receiver']->items as $item): ?>
 						<?php if ($item['item_type'] == 'item' && $item['amount'] > 1): ?>
-							<? for ($i=0; $i < $item['amount']; $i++): ?>
+							<?php for ($i=0; $i < $item['amount']; $i++): ?>
 								<?php echo $item['element'] ?>
-							<? endfor; ?>
+							<?php endfor; ?>
 						<?php else: ?>
 							<?php echo $item['element'] ?>
 						<?php endif ?>

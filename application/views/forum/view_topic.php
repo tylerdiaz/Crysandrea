@@ -265,7 +265,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f7d99', end
 		</span>
 	</form>
 </div>
-<? endif; ?>
+<?php endif; ?>
 
 <?php if ($this->system->is_staff()): ?>
 	<hr>
