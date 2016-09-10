@@ -3,7 +3,7 @@
 <div style="margin:15px 80px; position:relative;">
 	<?php if(validation_errors()): ?>
 		<?php $this->load->view('partials/notices/error.php', array('data' => validation_errors())) ?>
-	<? endif; ?>
+	<?php endif; ?>
 
 	<?php foreach ($success as $key => $success_notice): ?>
 		<div class="alert alert-success">

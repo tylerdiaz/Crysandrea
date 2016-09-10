@@ -5,7 +5,7 @@
 <div class="grid_9" style="padding:3px 10px;">
 	<?php if(validation_errors()): ?>
 		<?php $this->load->view('partials/notices/error.php', array('data' => validation_errors())) ?>
-	<? endif; ?>
+	<?php endif; ?>
 	<?php if ($error): ?>
 		<?php $this->load->view('partials/notices/error.php', array('data' => $error)) ?>
 	<?php endif ?>

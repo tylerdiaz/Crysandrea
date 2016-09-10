@@ -8,7 +8,7 @@
 <div class="grid_9" style="padding:3px 10px;">
 	<?php if(validation_errors()): ?>
 		<?php $this->load->view('partials/notices/error.php', array('data' => validation_errors())) ?>
-	<? endif; ?>
+	<?php endif; ?>
 	<?php echo form_open('/forum/new_topic/'.$this->uri->rsegment(3, 0), array('id' => 'create_topic')) ?>
 		<div class="control-group">
 			<label class="control-label" for="title" id="title_label">Topic title:</label>

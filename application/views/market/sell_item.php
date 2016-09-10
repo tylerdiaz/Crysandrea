@@ -90,36 +90,36 @@
 </div>
 <div>
 	<div class="tabs" style="margin:10px 5px;">
-		<? if(sizeof($inventory) > 0): ?>
+		<?php if(sizeof($inventory) > 0): ?>
 			<ul class="avatar_tabs left">                    
-				<? foreach($inventory as $tab => $tab_name){ ?>
-					<? foreach($tab_name as $key => $item1){ ?>
+				<?php foreach($inventory as $tab => $tab_name){ ?>
+					<?php foreach($tab_name as $key => $item1){ ?>
 						<li><a href="#<?=strtolower($key)?>"><?=$key?></a>
-					<? } ?>
-				<? } ?>
+					<?php } ?>
+				<?php } ?>
 			</ul>
 			<br clear="all" />
 			<div id="tab_glove">
-			<? foreach($inventory as $tab => $item1): ?>
-				<? foreach($item1 as $order => $item2): ?>
+			<?php foreach($inventory as $tab => $item1): ?>
+				<?php foreach($item1 as $order => $item2): ?>
 					<div id="<?=strtolower($order)?>">
-					<? foreach($item2 as $key => $item3): ?>
-						<? foreach($item3 as $key => $item): ?>
+					<?php foreach($item2 as $key => $item3): ?>
+						<?php foreach($item3 as $key => $item): ?>
 						<a href="#" class="stack add_item" quanity="<?=$item['num']?>" item_id="<?=$item['raw_item_id']?>">
 							<?=image('images/items/'.$item['thumb'], 'title="'.$item['name'].'" width="42" height="42"')?>
-							<? if($item['num'] > 1): ?>
+							<?php if($item['num'] > 1): ?>
 								<span><?php echo $item['num'] ?></span>
-							<? endif; ?>
+							<?php endif; ?>
 						</a>
-						<? endforeach; ?>
-					<? endforeach; ?>
+						<?php endforeach; ?>
+					<?php endforeach; ?>
 					</div>
-				<? endforeach; ?>
-			<? endforeach; ?>
+				<?php endforeach; ?>
+			<?php endforeach; ?>
 			</div>
-		<? else: ?>
+		<?php else: ?>
 			<strong>You have no items in your inventory.</strong>
-		<? endif; ?>
+		<?php endif; ?>
 	</div>
 	<style type="text/css">
 		.total_price {

@@ -40,4 +40,4 @@
 	</div>
 </div>
 <?php $authors[] = $post['username'] ?>
-<? endforeach; ?>
+<?php endforeach; ?>

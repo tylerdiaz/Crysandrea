@@ -254,7 +254,7 @@ class Profile extends CI_Controller
 			</p>
 			<?php if($comment['modify']): ?>
 				<a href="/profile/comment/delete/<?php echo $comment['comment_id'] ?>" style="color:#ff7c7c" class="delete small"> (Delete)</a>
-			<? endif; ?>
+			<?php endif; ?>
 			</li>
 		<?php endforeach;
 	}

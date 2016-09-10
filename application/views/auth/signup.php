@@ -20,7 +20,7 @@
 
 		<?php if(isset($error_msg) && strlen($error_msg) > 0): ?>
 			<?php $this->load->view('partials/notices/error.php', array('data' => '<li>'.$error_msg.'</li>')) ?>
-		<? endif ?>
+		<?php endif ?>
 		<form class="form-horizontal" method="POST" action="<?php echo $_SERVER['REQUEST_URI'] ?>" style="margin:20px 15px 0 30px;">
 			<?php if ($this->input->get('r')): ?>
 				<input type="hidden" value="<?php echo $this->input->get('r') ?>" name="redirect" />

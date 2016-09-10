@@ -9,7 +9,7 @@
 		<?php else: ?>
 			<?php if(validation_errors()): ?>
 				<?php $this->load->view('partials/notices/error.php', array('data' => validation_errors())) ?>
-			<? endif; ?>
+			<?php endif; ?>
 
 			<form class="form-horizontal" method="POST" action="<?php echo $this->uri->ruri_string() ?>/?user=<?php echo $this->input->get('user') ?>" style="margin:18px 15px 0 30px;">
 				<div class="next_up" style="margin:0px 0 20px;"><span class="label label-info">Tip</span> Make your password easy to remember and tough to guess. Need some ideas on how to do this? <a target="_window" href="http://preshing.com/20110811/xkcd-password-generator">This web comic has a good idea</a>.</div>
